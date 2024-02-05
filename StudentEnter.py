@@ -1,5 +1,5 @@
 import csv
-
+# The logins correct details are listed here, The user is asked to enter the correct credentials and if incorrect will be asked again
 def login():
     correct_username = "Leeman"
     correct_password = "123"
@@ -13,7 +13,7 @@ def login():
             return True
         else:
             print("Incorrect username or password. Please try again.")
-
+#Enter students details such as ID, forename and more and saves it to the csv file.
 def enter_student_details():
     with open("Students.csv", mode='a', newline='') as file:
         writer = csv.writer(file)
@@ -29,7 +29,7 @@ def enter_student_details():
         
         writer.writerow([unique_id, surname, forename, dob, address, phone_number, gender, tutor_group])
         print("Student details added successfully.")
-
+#Reading the excel spreadsheet
 def view_student_details():
     try:
         with open("Students.csv", mode='r') as file:
@@ -39,7 +39,7 @@ def view_student_details():
                 print(row)
     except FileNotFoundError:
         print("No student details found.")
-
+#Login main menu, 1 lets you enter details, 2 lets you view details and 3 exits the program 
 def main():
     if login():
         while True:
