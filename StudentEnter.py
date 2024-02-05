@@ -1,8 +1,8 @@
 import csv
 
 def login():
-    correct_username = "Leeman"
-    correct_password = "123"
+    correct_username = "Leeman" #case sensitive so "leeman" would not work
+    correct_password = "123"  #put in f for username and password and it correctly came out with incorrect details
     
     while True:
         entered_username = input("Enter username: ")
@@ -12,7 +12,7 @@ def login():
             print("Login successful!")
             return True
         else:
-            print("Incorrect username or password. Please try again.")
+            print("Incorrect username or password. Please try again.") #worked(see line 4)
 
 def enter_student_details():
     with open("Students.csv", mode='a', newline='') as file:
@@ -28,7 +28,7 @@ def enter_student_details():
         tutor_group = input("Enter tutor group: ")
         
         writer.writerow([unique_id, surname, forename, dob, address, phone_number, gender, tutor_group])
-        print("Student details added successfully.")
+        print("Student details added successfully.")  #Adding details worked, however, you can add anything you want here and it would still be added. 
 
 def view_student_details():
     try:
@@ -45,8 +45,8 @@ def main():
         while True:
             print("\nMenu:")
             print("1. Enter student details")
-            print("2. View student details")
-            print("3. Logout")
+            print("2. View student details") #typing 2 to view details showed it correctly after adding a student
+            print("3. Logout") #ends code, worked.
             choice = input("Enter your choice (1/2/3): ")
             
             if choice == "1":
@@ -57,7 +57,7 @@ def main():
                 print("Logged out.")
                 break
             else:
-                print("Invalid choice. Please enter 1, 2, or 3.")
+                print("Invalid choice. Please enter 1, 2, or 3.") #put in 4 and this showed up, working as intended.
 
 if __name__ == "__main__":
     main()
